@@ -5,6 +5,9 @@ class Dropdown {
     this.button = this.dropdown.querySelector('.dropdown-button');
     this.content = this.dropdown.querySelector('.dropdown-content');
     this.button.addEventListener('click', () => this.toggleContent());
+    this.container = document.querySelector('.section');
+    this.container.addEventListener('click', () => this.removeContent());
+
   }
 
   toggleContent() {
@@ -12,6 +15,15 @@ class Dropdown {
 
     this.content.classList.toggle('dropdown-hidden');
   }
+  removeContent(){
+    
+    this.content.classList.add('dropdown-hidden');
+  }
 }
 
-let dropdowns = document.querySelectorAll('.dropdown').forEach( dropdown => new Dropdown(dropdown));
+const container = document.querySelector('body');
+container.addEventListener('click', function() {
+
+})
+
+const dropdowns = document.querySelectorAll('.dropdown').forEach( dropdown => new Dropdown(dropdown));
